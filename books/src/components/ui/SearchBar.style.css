@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: rgb(233, 226, 226);
+    width: 50%;
+    border-radius: 15px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow: 0 0 5px #ddd;
+    align-items: center;
+}
+input{
+    background-color: transparent;
+    border:none;
+    height: 100%;
+    font-size: 1rem;
+    width: 100%;
+    margin-left: 5px ;
+}
+input:focus{
+    outline: none;
+}
+
+#searchbar i{
+    color:rgb(40, 25, 106) ;
+    align-items: center;
+}
+
+button{
+    border: none;
+    background-color: rgb(233, 226, 226)
+}
+
+span{
+    font-size: 1.8rem;
+    align-items: center;
+    color: rgb(207, 202, 202);
+}

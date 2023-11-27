@@ -1,0 +1,41 @@
+version: '3'
+services:
+  frontend:
+    container_name: react-api
+    restart: unless-stopped
+    image: react-api-dev-1.0
+    build:
+      context: books
+      #target: development
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    env_file:
+      - ./server/.env
+    depends_on:
+      - backend
+
+  backend:
+    container_name: react-server
+    restart: unless-stopped
+    image: react-server-dev-1.0
+    build:
+      context: server
+      #target: development
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    environment:
+      DB_URL: mongodb.//db/vidly
+    depends_on:
+      - database
+
+  database:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - vidly:/data/db
+    restart: always
+volumes:
+  vidly:
